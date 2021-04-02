@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>药品系统管理</title>
+    <link rel="stylesheet" th:href="@{/static/layui/css/layui.css}" media="all">
+    <link rel="stylesheet" th:href="@{/static/admin/style.css}" media="all">
 </head>
 <body>
-$END$
+   <div class="login-main">
+       <header class="layui-elip">登录</header>
+       <form class="layui-form">
+           <div class="layui-input-inline">
+               <input type="text" name="username" required lay-verify="required" placeholder="用户名" class="layui-input" autocomplete="off">
+           </div>
+           <div class="layui-input-inline">
+               <input type="password" name="password" required lay-verify="required" placeholder="密码" class="layui-input" autocomplete="off">
+           </div>
+           <div class="layui-input-inline login-btn">
+              <button lay-submit lay-filter="login" class="layui-btn">登录</button>
+           </div>
+       </form>
+   </div>
 </body>
 </html>
