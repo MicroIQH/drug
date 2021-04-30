@@ -6,7 +6,8 @@ import com.manage.drug.entity.User;
 /**
  * @author 杉子
  * @date 2021/4/3 23:01
- */
+ *
+ * 用户表的CRUD */
 public interface UserMapper extends BaseMapper<User> {
 
 }
