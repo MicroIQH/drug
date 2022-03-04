@@ -32,12 +32,16 @@ public class ShiroFilterConfiguration {
          */
         Map<String,String> filterMap = new LinkedHashMap<>();
         filterMap.put("/static/**","anon");
+        filterMap.put("1.jpg","anon");
         filterMap.put("/login","anon");
+        filterMap.put("/regist","anon");
         filterMap.put("/toLogin","anon");
+        filterMap.put("/toRegist","anon");
         filterMap.put("/**","authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterMap);
         //不登录自动转向的页面
         shiroFilterFactoryBean.setLoginUrl("/login");
+        //shiroFilterFactoryBean.setLoginUrl("/regist");
         //登录后自动转向的页面
         shiroFilterFactoryBean.setSuccessUrl("/index");
         return shiroFilterFactoryBean;

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.util.UUID;
 
 /**
+ * 权限认证
  * @author 杉子
  * @date 2021/4/30 13:57
  */

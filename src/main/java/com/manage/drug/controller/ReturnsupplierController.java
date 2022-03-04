@@ -34,7 +34,7 @@ public class ReturnsupplierController {
      */
     @RequestMapping(value = "/returnsupplierQueryPage")
     @ResponseBody
-    public Object returnsupplierQueryPage(String param, @RequestParam(defaultValue = "1")int pageNum, @RequestParam(defaultValue = "10")int pageSize){
+    public Object returnsupplierQueryPage(String param, @RequestParam(defaultValue = "1")int pageNum,@RequestParam(defaultValue = "10")int pageSize){
         try{
             IPage<Returnsupplier> iPage = returnsupplierService.selectReturnsupplierPage(pageNum,pageSize,param);
             return ResultMapUtil.getHashMapMysqlPage(iPage);
@@ -104,7 +104,6 @@ public class ReturnsupplierController {
     }
 
 }
-
 
 
 

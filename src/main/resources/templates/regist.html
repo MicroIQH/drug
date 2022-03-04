@@ -12,15 +12,14 @@
             background-size: 100%;
         }
     </style>
-    <title>医院药品管理系统</title>
+
+    <title style="color: #00C0F7">医院药品管理系统</title>
     <link rel="stylesheet" th:href="@{/static/layui/css/layui.css}" media="all">
     <link rel="stylesheet" th:href="@{/static/admin/style.css}" media="all">
-
 </head>
 <body>
-<div class="text" style="text-align:center;color: #fd4b2c;text-space: 200;font-size: 80px;font-family: 'LiSu'" >医院药品管理系统</div>
 <div class="login-main">
-    <header class="layui-elip"  style="font-family: LiSu;font-size: 40px">登录</header>
+    <header class="layui-elip"  style="font-family: LiSu;font-size: 40px">注册</header>
     <form class="layui-form">
         <div class="layui-input-inline">
             <input type="text" name="username" required lay-verify="required" placeholder="用户名" class="layui-input" autocomplete="off">
@@ -29,9 +28,9 @@
             <input type="password" name="password" required lay-verify="required" placeholder="密码" class="layui-input" autocomplete="off">
         </div>
         <div class="layui-input-inline login-btn">
-            <button lay-submit lay-filter="login" class="layui-btn">登录</button>
+            <button lay-submit lay-filter="login" class="layui-btn">注册</button>
         </div>
-        <a href="/regist" style="color: red">没有账号，进入注册界面</a>
+        <a href="/login" style="color: red">已有账号，进入登录界面</a>
     </form>
 </div>
 
@@ -43,14 +42,14 @@
         //监听提交
         form.on("submit(login)",function (data) {
             $.ajax({
-                url:"/toLogin",
+                url:"/toRegist",
                 type:"POST",
                 data:data.field,
                 dataType:"json",
                 success: function (result) {
                     if(result.code == "1"){
                         layer.msg(result.msg,{icon:result.icon,anim:result.anim},function () {
-                            location.href = "/index";    //登录成功，转向后台主页
+                            location.href = "/login";    //登录成功，转向后台主页
                         });
                     }else{
                         layer.msg(result.msg,{icon:result.icon,anim:result.anim});
@@ -61,5 +60,6 @@
         });
     });
 </script>
+
 </body>
 </html>

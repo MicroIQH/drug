@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * 收到退货相关的controller
  */
+
 @Controller
 @RequestMapping(value = "/returngoods")
 public class ReturngoodsController {
@@ -21,17 +22,21 @@ public class ReturngoodsController {
     @Autowired
     private IReturngoodsService returngoodsService;
 
-    /**
+
+/**
      * 转向收到退货页面
      */
+
     @RequestMapping
     public String returngoods(){
         return "/returngoods";
     }
 
-    /**
+
+/**
      * 分页查询收到退货列表
      */
+
     @RequestMapping(value = "/returngoodsQueryPage")
     @ResponseBody
     public Object returngoodsQueryPage(String param, @RequestParam(defaultValue = "1")int pageNum, @RequestParam(defaultValue = "10")int pageSize){
@@ -43,17 +48,21 @@ public class ReturngoodsController {
         }
     }
 
-    /**
+
+/**
      * 转向收到退货新增页面
      */
+
     @RequestMapping(value = "/returngoodsPage")
     public String returngoodsPage(){
         return "/returngoodsPage";
     }
 
-    /**
+
+/**
      * 添加一个收到退货
      */
+
     @RequestMapping(value = "/returngoodsAdd")
     @ResponseBody
     public Object returngoodsAdd(Returngoods returngoods){
@@ -65,9 +74,11 @@ public class ReturngoodsController {
         }
     }
 
-    /**
+
+/**
      * 转向收到退货编辑页面
      */
+
     @RequestMapping(value = "/returngoodsQueryById")
     public String returngoodsQueryById(@RequestParam(name = "id",required = true)Integer id, Model model){
         Returngoods returngoods = returngoodsService.queryReturngoodsById(id);
@@ -75,9 +86,11 @@ public class ReturngoodsController {
         return "/returngoodsPage";
     }
 
-    /**
+
+/**
      * 修改一个收到退货
      */
+
     @RequestMapping(value = "/returngoodsEdit")
     @ResponseBody
     public Object returngoodsEdit(Returngoods returngoods){
@@ -89,9 +102,11 @@ public class ReturngoodsController {
         }
     }
 
-    /**
+
+/**
      * 删除一个收到退货
      */
+
     @RequestMapping(value = "/returngoodsDelById")
     @ResponseBody
     public Object returngoodsDelById(Integer id){
@@ -104,6 +119,7 @@ public class ReturngoodsController {
     }
 
 }
+
 
 
 

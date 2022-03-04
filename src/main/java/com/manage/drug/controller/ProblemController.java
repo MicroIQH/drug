@@ -16,6 +16,7 @@ import java.util.Date;
 /**
  * 问题药品相关的controller
  */
+
 @Controller
 @RequestMapping(value = "/problem")
 public class ProblemController {
@@ -23,17 +24,21 @@ public class ProblemController {
     @Autowired
     private IProblemService problemService;
 
-    /**
+
+/**
      * 转向问题药品页面
      */
+
     @RequestMapping
     public String problem(){
         return "/problem";
     }
 
-    /**
+
+/**
      * 分页查询问题药品列表
      */
+
     @RequestMapping(value = "/problemQueryPage")
     @ResponseBody
     public Object problemQueryPage(String param, @RequestParam(defaultValue = "1")int pageNum, @RequestParam(defaultValue = "10")int pageSize){
@@ -45,17 +50,21 @@ public class ProblemController {
         }
     }
 
-    /**
+
+/**
      * 转向问题药品新增页面
      */
+
     @RequestMapping(value = "/problemPage")
     public String problemPage(){
         return "/problemPage";
     }
 
-    /**
+
+/**
      * 添加一个问题药品
      */
+
     @RequestMapping(value = "/problemAdd")
     @ResponseBody
     public Object problemAdd(Problem problem){
@@ -68,9 +77,11 @@ public class ProblemController {
         }
     }
 
-    /**
+
+/**
      * 转向问题药品编辑页面
      */
+
     @RequestMapping(value = "/problemQueryById")
     public String problemQueryById(@RequestParam(name = "id",required = true)Integer id, Model model){
         Problem problem = problemService.queryProblemById(id);
@@ -78,9 +89,11 @@ public class ProblemController {
         return "/problemPage";
     }
 
-    /**
+
+/**
      * 修改一个问题药品
      */
+
     @RequestMapping(value = "/problemEdit")
     @ResponseBody
     public Object problemEdit(Problem problem){
@@ -92,9 +105,11 @@ public class ProblemController {
         }
     }
 
-    /**
+
+/**
      * 删除一个问题药品
      */
+
     @RequestMapping(value = "/problemDelById")
     @ResponseBody
     public Object problemDelById(Integer id){
@@ -107,6 +122,7 @@ public class ProblemController {
     }
 
 }
+
 
 
 

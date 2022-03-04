@@ -22,6 +22,7 @@ import java.util.List;
 /**
  * 供应商相关的controller
  */
+
 @Controller
 @RequestMapping(value = "/supplier")
 public class SupplierController {
@@ -29,17 +30,21 @@ public class SupplierController {
     @Autowired
     private ISupplierService supplierService;
 
-    /**
+
+/**
      * 转向供应商页面
      */
+
     @RequestMapping
     public String supplier(){
         return "/supplier";
     }
 
-    /**
+
+/**
      * 分页查询供应商列表
      */
+
     @RequestMapping(value = "/supplierQueryPage")
     @ResponseBody
     public Object supplierQueryPage(String param, @RequestParam(defaultValue = "1")int pageNum,
@@ -52,17 +57,21 @@ public class SupplierController {
         }
     }
 
-    /**
+
+/**
      * 转向供应商新增页面
      */
+
     @RequestMapping(value = "/supplierPage")
     public String supplierPage(){
         return "/supplierPage";
     }
 
-    /**
+
+/**
      * 添加一个供应商
      */
+
     @RequestMapping(value = "/supplierAdd")
     @ResponseBody
     public Object supplierAdd(Supplier supplier){
@@ -75,9 +84,11 @@ public class SupplierController {
         }
     }
 
-    /**
+
+/**
      * 转向供应商编辑页面
      */
+
     @RequestMapping(value = "/supplierQueryById")
     public String supplierQueryById(@RequestParam(name = "id",required = true)Integer id, Model model){
         Supplier supplier = supplierService.querySupplierById(id);
@@ -85,9 +96,11 @@ public class SupplierController {
         return "/supplierPage";
     }
 
-    /**
+
+/**
      * 修改一个供应商
      */
+
     @RequestMapping(value = "/supplierEdit")
     @ResponseBody
     public Object supplierEdit(Supplier supplier){
@@ -99,9 +112,11 @@ public class SupplierController {
         }
     }
 
-    /**
+
+/**
      * 删除一个供应商
      */
+
     @RequestMapping(value = "/supplierDelById")
     @ResponseBody
     public Object supplierDelById(Integer id){
@@ -113,9 +128,11 @@ public class SupplierController {
         }
     }
 
-    /**
+
+/**
      * 获取所有供应商
      */
+
     @RequestMapping(value = "/supplierList")
     @ResponseBody
     public Object supplierList(){
@@ -124,4 +141,5 @@ public class SupplierController {
     }
 
 }
+
 
